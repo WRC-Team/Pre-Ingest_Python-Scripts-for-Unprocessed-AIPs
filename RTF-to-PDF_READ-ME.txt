@@ -1,0 +1,20 @@
+The "RTF to PDF" python script, developed by Steven Loyd for use here at Rice University, was created to assist archivists batch convert RTF documents to PDF files prior to ingesting content through Archivematica (AM). 
+
+AM will not automatically copy and convert (normalize) a variety of preservation master file formats. In this case, RTF documents will not normalize to PDF for access purposes. 
+
+Since RTF files are among the most common formats in unprocessed collections that require nortmalization, Steven developed the "RTF to PDF" script to batch convert the large number of RTF files held within a given collection. The python file is named "rtf-to-pdf.py". PLEASE NOTE: This script is held in a "Conversion" sub-folder within our Unprocessed-aips Transfer Source location. The script will run on the entire "Conversion" folder, whether you have one package in it or several. The script looks through every folder and sub-folder held within the "Conversion" location and will create a PDF of every RTF file it finds. 
+
+Here are step-by-step instructions for the rtf-to-pdf.py script:
+
+AIPs that need RTF file conversion must be placed in the "Conversion" sub-folder within the appropriate Transfer Source directory
+Run rtf-to-pdf.py. 
+This can be done in two ways:
+Simply double click the file.
+OR
+Shift + right-click in the folder and click "Open PowerShell window here." In the PowerShell window, input "python rtf-to-pdf.py".
+Note that only the PowerShell method will allow you to see errors, should any occur. If you double click the script and it doesn't produce a report, you should run it in PowerShell and see what's happening.
+POWERSHELL IS THE PREFERRED OPTION
+
+Please be aware:
+The script will run on any and all AIPs placed in the Conversion folder (can be just 1 AIP at a time or several batched together).
+The script will create PDF copies of all of the RTF files within the AIP.
