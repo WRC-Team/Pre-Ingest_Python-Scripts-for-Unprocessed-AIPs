@@ -1,0 +1,110 @@
+
+
+The "Format Counter" python script, developed by Steven Loyd for use here at Rice University, was created to assist archivists ingest new and unprocessed collections through Archivematica (AM). Unfortunately, AM will not natively normalize all file types. Normalization of file formats refers to the process by which preservation master files are copied and converted to universally accessible proxy files. Since it is too time-consuming for the archivists to manually search through an archival package looking for formats in need of conversion, the "Format Counter" script was developed in order to list not only which formats are present in a package, but which formats will require pre-ingest conversion. 
+
+The script works by analyzing information contained within a CSV spreadsheet that gets exported when DROID file identification software is run on an AM-compliant archival package.
+Let me reiterate, DROID software must be run on a package FIRST before the script is used.
+
+The basic steps are, once an AM-compliant package is created and prior to ingest, it is placed in a temporary directory (ours is in a Transfer Source location named "Unprocessed-aips" in a sub-folder named "NEED-TO-NORMALIZE"). The python "Format Counter" script (formatcounter.py) should already be in this directory. Once the package is in the directory, open DROID (you may need to download this application; it is a free, open-source format identification tool that uses the UK National Archives' PRONOM registry to ID formats within a folder or series of folders) and run DROID on the package. Once the package has been looked at by DROID, export a CSV and name the CSV droid.csv (this spreadsheet lists metadata about all the files within a package, including the format and the location of the file within the package). Then, run the "Format Counter" script within the directory. The script will analyze the droid.csv file and create a succinct list of file formats. Additionally, the list will indicate YES or NO regarding whether or not the format will be normalized by AM during the ingest process. If there are formats that will NOT normalize, go back to the CSV, sort the formats column A - Z, locate the formats in question and track down the individual file using the droid.csv file path metadata. From there, the archivist can decide how best to normalize the file. 
+
+Step-by-step instructions are included below:
+
+Pre-Ingest: Digital Archivist - Unprocessed AIP Format Identification
+
+Digital Archivist explores the content for any formats which need file format normalization before ingest, primarily Word docs to PDF, .wav files to .mp3 and .wmv files to .mp4, or email accounts to MBOX.  (These will throw permissible errors and won’t fail ingest, but to be useful they need reformatting.) AIPs that already contain access format proxies for the preservation files will not need any further work before being placed in the appropriate Transfer Source location. AIPs that do NOT contain the proper access formats will require more steps. For reference, here are several common file formats that will require normalization:
+
+DOC/DOCX/RTR
+XLS/XLSX
+PPT/PPTX
+WAV
+WMV/MOV/VOB
+PSD (Photoshop)
+Email
+Files with no file extension
+
+The workflow for AIPs that require normalization is as follows:
+
+The AIPs you're interested in analyzing should be in an appropriate Transfer Source location. The only other file in that folder should be formatcounter.py.
+
+Open DROID and run it on the SPECIFIC AIP folder you would like to check. This may take a while depending on how many files are contained in the AIP.
+To run DROID after opening the application, click on the green "Add" button (in the shape of a +) and browse to the appropriate folder. Then click the blue "Start" button. A blue progress bar will appear and indicate the app's progress working through the folder. Once the blue progress bar indicates the app is finished, click the "Export" button. In teh Export window, select the "Untitled" checkbox and the "One row per file" selection, then click the "Export profiles..." button. Export the resultant csv file as "droid.csv" in the same location as the package. CSV MUST BE NAMED droid.csv FOR PYTHON SCRIPT TO WORK
+
+Run formatcounter.py. This can be done in two ways:
+
+Simply double click the file.
+Shift + right-click in the folder and click "Open PowerShell window here." In the PowerShell window, input "python formatcounter.py".
+Note that only the PowerShell method will allow you to see errors, should any occur. If you double click the script and it doesn't produce a report, you should run it in PowerShell and see what's happening.
+POWERSHELL IS THE PREFERRED OPTION
+
+The script will produce a unique, timestamped .txt report listing the PRONOM IDs (PUID), the different file types in the given materials (FORMAT_NAME) how many there are of each (COUNT), and whether or not Archivematica will normalize them automatically as determined by the normal_formats.txt (WILL AM NORMALIZE?).
+
+Note that some files may not automatically normalize because they don't need to. PDF files, for example, do not need to be normalized, and would therefore say "No" under the normalizing column. 
+
+At the bottom of the report may be a list of file types that for whatever reason did not provide a FORMAT_NAME in droid.csv. Their extensions are provided instead. These files should be handled like any other of their type.
+
+Keep in mind that the report will have at least one CSV file in addition to the relevant materials (the metadata.csv file required for an AIP).
+
+Known potential errors:
+
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 18 fields in line (xyz), saw (X fields)
+This is the result of certain files having multiple formats, as indicated by the FORMAT_COUNT column (Column N) in droid.csv. The consequence is that the files' format information will extend past the normal length of the csv in order to get all the data in (in essence, there will be too many cells). To fix this, find the culprit files in the csv by filtering for numbers greater than 1 in the FORMAT_COUNT column, note the extra format data if needed, and delete the superfluous cells.
+
+WHAT HAPPENS NEXT?
+
+FORMAT CONVERSION
+
+Droid CSV is used to locate actual locations where files needing normalization are located (Column D - FILE_PATH).
+Here are some frequently normalized file types-
+
+Word and RTF files to PDF:
+Steven has created two distinct python scripts to batch convert word docs to PDF and RTF files to PDF. I'll have these scripts and their instructions for use available individually.
+
+
+WAV or VOB audio to mp3 (use Audacity)
+Audio conversion requires the use of Audacity. Open the Audacity application (go to the Start icon and search Audacity)
+Drag and drop file in need of conversion into Audacity
+Files can be WAV or can even look like video files (VOB)
+AM normalizes audio to WAV
+Go to file, select Export, then select Export as MP3
+In the Export window, you can create the name of the file (will default to name of file you just dragged and dropped into Audacity), the directory the converted file will export to, and the quality of the export (Standard, 170-210 kbps).
+When ready to convert, click the Save button on the right-hand side of the window.
+
+VOB/MOV/WMV video to mp4  (Handbrake) 
+Video conversion requires the use of Handbrake. Open the Handbrake application (go to the Start icon and search Handbrake).
+Drag and drop file in need of conversion into Handbrake
+Files are usually WMV, MOV, or VOB
+Once the file has successfully imported into Handbrake, click on the Video tab in the center of the window
+In the Video tab, select MPEG-4 from the Video Codec dropdown menu
+The Framerate (FPS) dropdown can remain at 30, but select Constant Framerate option
+Quality can remain at Constant Quality 22
+At the bottom of the window, browse the Save As to export the file to the appropriate AIP and  folder 
+Finally, select the Start Encode button (green circle with black triangle in it at the top of the window). Handbrake will alert you when the conversion is finished.
+
+XSL/XSLX (Excel)-to-PDF (manual conversion in Excel file, maybe automate with a script?)
+Open the individual file and save as PDF
+Make sure the file name is the same as the original
+
+PPT-to-PDF (manual conversion within PowerPoint file, maybe automate with a script?)
+Open the individual file and save as PDF
+Make sure the file name is the same as the original
+
+PSD-to-JPG or PDF (Photoshop files can be manually converted within the file itself)
+Open the individual file and save as PDF
+Make sure the file name is the same as the original
+
+Email to MBOX (Requires an email conversion tool such as Emailchemy)
+Converting email to the MBOX format requires the use of the Emailchemy software. This software requires a licensing fee to run. Additionally, your institution's IT department may also be able to export emails as MBOX files
+MBOX files are recommended as they are compatible with the ePADD email archiving software. 
+
+For files with no file extension, right click on the file and try to open it with WordPad or Notepad to see if there is any information that can be obtained.
+Right click the file 
+Select “Open With” from the menu that opens up once you right click
+From the “Open With” window, select WordPad or Notepad 
+Once opened in WordPad or Notepad, you will be able to see if there is any legible information or if it is all a jumble of illegible special characters. 
+
+
+AFTER CONVERSION
+
+Once pre-ingest normalization has taken place, copy the AIP to the appropriate Transfer Source folder. The package is ready for ingest.
+
+
