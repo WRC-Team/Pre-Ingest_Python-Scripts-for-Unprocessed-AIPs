@@ -1,0 +1,145 @@
+Archivematica Maildir
+JPEG
+Nikon Digital SLR Camera Raw Image File
+Exchangeable Image File Format (Compressed)
+Windows Bitmap
+TIFF
+Epson Raw
+Pentax RAW
+TIFF for Internet Fax (TIFF-FX)
+Sony RAW Image File
+Digital Negative Format (DNG)
+PNG
+Generic PICT
+Canon CIFF raw image data
+Hasselblad 3FR Raw
+Still Pictture Interchange Format
+OpenEXR
+Truevision TGA Bitmap
+1989a
+Windows BItmap
+JPEG
+Raw Bitmap
+Leaf Mosaic Raw
+Exchangeable Image File Format (Compressed)
+Generic gif
+Generic Bitmap
+Hasselblad 3FR
+Windows Bitmap
+ESRI World File Format
+Generic RAW Image
+TIFF for Image Technology (TIFF/IT)
+Phase One IIQ Raw
+Sigma/Foveon X3F raw image
+Digital Negative Format (DNG)
+PNG
+Phase One Raw big endian
+Exchangeable Image File Format (Uncompressed)
+Canon CR2 Raw
+Minolta Raw Image
+JP2 (JPEG 2000 part 1)
+PICT
+Adobe Photoshop
+Windows BItmap
+JPEG
+Generic TGA
+Generic JPEG
+Exchangeable Image File Format (Uncompressed)
+PNG
+Kodak Digital Camera Raw Image File
+Exchangeable Image File Format (Compressed)
+Fuji Raw
+TIFF for Electronic Photography (TIFF/EP)
+Digital Negative Format (DNG)
+Geographic Tagged Image File Format (GeoTIFF)
+Windows Bitmap
+Generic DNG
+Digital Negative Format (DNG)
+Olympus RAW
+Generic PNG
+PICT
+Bitmap 3.0 NT
+OS/2 BItmap
+Olympus RAW big endian
+Raw JPEG Stream
+Truevision TGA Bitmap
+1987a
+Exchangeable Image File Format (Uncompressed)
+Panasonic Raw
+BWAVE WAVEFORMATEXTENSIBLE 2
+Audio Interchange File Format (compressed)
+BWAVE MPEG 2
+Waveform Audio
+BWAVE PCM 2
+Generic WAV
+Exchangeable Image File Format (Audio)
+WMA file
+Broadcast WAVE 1
+RF64
+AC-3 Compressed
+BWAVE WAVEFORMATEXTENSIBLE 0
+Waveform Audio (PCMWAVEFORMAT)
+BWAVE MPEG 0
+MPEG 1/2 Audio Layer I
+BWAVE PCM 0
+Exchangeable Image File Format (Audio)
+MPEG 1/2 Audio Layer 3
+Broadcast WAVE 2
+Audio Interchange File Format
+RF64 MBWF
+BWAVE WAVEFORMATEXTENSIBLE 1
+BWAVE MPEG 1
+MPEG Audio Stream, Layer II
+BWAVE PCM 1
+Generic AIFF
+Exchangeable Image File Format (Audio)
+Waveform Audio (WAVEFORMATEX)
+Broadcast WAVE 0
+Generic ASF
+Adobe Flash 8
+Macromedia FLV
+Macromedia Flash 5
+Apple ProRes
+Macromedia Flash 2
+Generic SWF
+Generic AVI
+Adobe Flash 9
+Windows Media Video
+Generic MKV
+Macromedia Flash 6
+Macromedia Flash 3
+Generic WMV
+Generic MOV
+Advanced Systems Format
+Windows Media Video 9 Advanced Profile (WVC1)
+Adobe Flash 10
+Macromedia Flash 7
+Macromedia Flash 4
+Macromedia Flash 1
+Generic MXF
+Generic AI file
+Adobe Illustrator 10.0
+Adobe Illustrator 13.0
+Scalable Vector Graphics
+Adobe Illustrator 16.0
+Generic SVG
+Adobe Illustrator 5.0/5.5
+Adobe Illustrator
+Adobe Illustrator Japan
+Adobe Illustrator 1.0/1.1
+Adobe Illustrator 12.0
+Adobe Illustrator 15.0
+Scalable Vector Graphics
+Adobe Illustrator
+Adobe Illustrator
+Adobe Illustrator
+Adobe Illustrator 11.0
+Adobe Illustrator 14.0
+Scalable Vector Graphics
+Adobe Illustrator 3.0/3.2
+Adobe Illustrator
+Adobe Illustrator 88
+EPS
+EPS
+EPS 3
+Generic EPS
