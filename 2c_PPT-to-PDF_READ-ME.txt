@@ -1,0 +1,20 @@
+The "PPT to PDF" python script, developed by Steven Loyd and Sean Smith for use here at Rice University, was created to assist archivists batch convert PowerPoint files to PDF files prior to ingesting content through Archivematica (AM). 
+
+AM will not automatically copy and convert (normalize) a variety of preservation master file formats. In this case, PowerPoint documents will not normalize to PDF for access purposes. 
+
+Since PowerPoint documents (.ppt, .pptx) are a fairly common format in unprocessed collections that require nortmalization, Steven and Sean developed the "PPT to PDF" script to batch convert the large number of PowerPoint docs held within a given collection. The python file is named "ppt-to-pdf.py". PLEASE NOTE: This script is held in a "Conversion" sub-folder within our Unprocessed-aips Transfer Source location. A dedicated "Conversion" sub-folder is REQUIRED. The script will run on the entire "Conversion" folder, whether you have one package in it or several. The script looks through every folder and sub-folder held within the "Conversion" location and will create a PDF of every PowerPoint file it finds. 
+
+Here are step-by-step instructions for the ppt-to-pdf.py script:
+
+AIPs that need PowerPoint conversion must be placed in the "Conversion" sub-folder within the appropriate Transfer Source directory
+Run ppt-to-pdf.py. 
+This can be done in two ways:
+Simply double click the file.
+OR
+Shift + right-click in the folder and click "Open PowerShell window here." In the PowerShell window, input "python ppt-to-pdf.py".
+Note that only the PowerShell method will allow you to see errors, should any occur. If you double click the script and it doesn't produce a report, you should run it in PowerShell and see what's happening.
+POWERSHELL IS THE PREFERRED OPTION
+
+Please be aware:
+The script will run on any and all AIPs placed in the Conversion folder (can be just 1 AIP at a time or several batched together)
+The script will create PDF copies of all of the respective PPT/PPTX files within the AIP
