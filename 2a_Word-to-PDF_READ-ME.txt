@@ -2,7 +2,7 @@ The "Doc to PDF" python script, developed by Steven Loyd for use here at Rice Un
 
 AM will not automatically copy and convert (normalize) a variety of preservation master file formats. In this case, Word documents will not normalize to PDF for access purposes. 
 
-Since Word documents (.doc, .docx) are the most common format in unprocessed collections that require nortmalization, Steven developed the "Doc to PDF" script to batch convert the large number of Word docs held within a given collection. The python file is named "doc-to-pdf.py". PLEASE NOTE: This script is held in a "Conversion" sub-folder within our Unprocessed-aips Transfer Source location. The script will run on the entire "Conversion" folder, whether you have one package in it or several. The script looks through every folder and sub-folder held within the "Conversion" location and will create a PDF of every Word doc it finds. 
+Since Word documents (.doc, .docx) are the most common format in unprocessed collections that require nortmalization, Steven developed the "Doc to PDF" script to batch convert the large number of Word docs held within a given collection. The python file is named "doc-to-pdf.py". PLEASE NOTE: This script is held in a "Conversion" sub-folder within our Unprocessed-aips Transfer Source location. A dedicated "Conversion" sub-folder is REQUIRED. The script will run on the entire "Conversion" folder, whether you have one package in it or several. The script looks through every folder and sub-folder held within the "Conversion" location and will create a PDF of every Word doc it finds. 
 
 Here are step-by-step instructions for the doc-to-pdf.py script:
 
