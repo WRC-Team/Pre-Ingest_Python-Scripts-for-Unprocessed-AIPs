@@ -1,0 +1,4 @@
+This TXT file lists all of the formats that Archivematica WILL normalize. 
+This list is used by the "formatcounter.py" script to create a report that gives a simplified list of which formats in a package will or will not be normalized (the formats are listed and designated as either YES or NO). 
+It also shows how many of each file format there are in the package.
+Please keet the "normal)formats.txt" file in the same directory as the "formatcounter.py" script!
