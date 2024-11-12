@@ -7,3 +7,10 @@ The first script (formatcounter.py and README) requires the use of the DROID fil
 The next scripts are all used to convert formats. We have 3 conversion scripts so far, DOC (Word)-to-PDF, RTF-to-PDF and PPT-to-PDF. These scripts will require a dedicated folder within your institutions hard drive. The scripts will run on any and all packages within this dedicated folder. The scripts dive down into each package and recursively search through each sub-folder looking for specific file formats. The script then converts and properly names the new access copy.
 Please be aware that you WILL be creating new files, thereby increasing the size of your package.
 Please be aware that some file format conversions MAY NOT be necessary. For example, a collection may be comprised of many TIFF files. Your policy may be to make copies on demand. Therefore, you would not need to convert the TIFF files. 
+
+KNOWN ERRORS:
+"Word cannot open file because the file format does not match the file extension.”
+This error occurs when the file extension (doc vs. docx, for example) does NOT match the file’s “magic number”, or the actual file format. Most commonly, this occurs between .doc and .docx Word files. The script will NOT create a PDF if the format and extension do not match.
+The error will appear in the Powershell window. Additionally, the conversion scripts will output an error TXT file. The error should appear in this file, as well.
+The error will give a location for the file. Navigate to the file’s location and change the extension to either .doc or .docx. Then re-run the script. A PDF should be created.
+
