@@ -1,0 +1,28 @@
+The "Find Long Paths" python script, developed by Steven Loyd for use here at Rice University, was created to assist archivists locate any instances within an AIP where the file path exceeds 256 characters. 
+
+When an AIP contains a file path that exceeds 256 characters, the AIP will not migrate to a new location and will not ingest into Archivemtica (AM).
+
+Many of the collections we acquire contain either folders nested within folders or files that have exceedingly long file names. Or both. It is highly inefficient for the Digital Archivist (DA) or Processing Archivist (PA) to manually search through an AIP for long file paths. Therefore, Steven developed this script to quickly search for and list any instances where a file path exceeds the 256-character threshold.
+
+Here are step-by-step instructions for the ppt-to-pdf.py script:
+
+Prior to being moved to a Transfer Source or Waiting Room location, please run the findlongpaths.py script. The script has been placed in all "Ready-for-AM" folders within the Processing area. The script has also been placed in every "FAILED" folder within the Transfer Source area. The script will work on any and all AIPs within the folder.
+
+Within any Processing Ready-for-AM folder or any FAILED folder, run findlongpaths.py. 
+
+PLEASE use the PowerShell window when running this script. The PowerShell window will tell the user if/when an error has occured with the script.
+
+To run the script press down Shift + right-click in the folder and click "Open PowerShell window here." 
+
+In the PowerShell window, input "python findlongpaths.py".
+Note that only the PowerShell method will allow you to see script errors, should any occur. If you double click the script and it doesn't produce a report, you should run it in PowerShell and see what's happening.
+POWERSHELL IS THE PREFERRED OPTION
+
+After running, the script will output a CSV file. The CSV file will list two kinds of data. First, it will display the entire file path for any threshold error where there are 256 characters or more in the file path. Second, it will list how many characters are in said file path.
+
+The DA will alert the relevant PA of the file path errors so that the PA can re-arrange the AIP appropriately. Once the file path error is corrected, the DA will be alerted and continue vetting the AIP for ingest into AM.
+
+Please be aware:
+The script will run on any and all AIPs within the folder the script is being run in (can be just 1 AIP at a time or several batched together).
+
+If an error or errors occur, the CSV will list each by displaying the entire file path and also how many characters there are in the path. In many cases, multiple files within a folder will be listed as needing modification.
